@@ -1,11 +1,9 @@
-package barber;
-
 /*
- * To change this license header, choose License Headers in Project Properties.
+ * To change this license header, choose License Headers in Project Properties. 
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-//package barber;
+package barber_customer_system;
 
 import java.awt.BorderLayout;
 import java.awt.event.MouseAdapter;
