@@ -1,10 +1,11 @@
+package barber;
+
 /*
- * To change this license header, choose License Headers in Project Properties. 
+ * To change this license header, choose License Headers in Project Properties.
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package barber_customer_system;
-
+//package barber;
 
 import java.awt.List;
 import java.awt.event.ActionEvent;
@@ -33,11 +34,9 @@ import javax.swing.JTextField;
 import javax.swing.*;  
 
 
-
 import com.mysql.jdbc.PreparedStatement;
-import com.placeholder.PlaceHolder;
 
-
+//import org.jdatepicker.*;
 
 
 public class NewOrder implements ActionListener{
@@ -59,6 +58,7 @@ public class NewOrder implements ActionListener{
 	ArrayList<String> timeList = new ArrayList<String>();
 	String[] array = new String[10];
 	static JComboBox c1;
+//	JDatePicker datePicker;
 	int customer_id;
 //	private 
 	
@@ -97,8 +97,19 @@ public class NewOrder implements ActionListener{
 		date.setBounds(20, 70, 80, 20);
 		jpanel.add(date);
 		
-		dateField = new JTextField();
-                PlaceHolder placeHolder1 = new PlaceHolder(dateField, "Enter date yyyy-MM-dd");
+//		
+//		UtilDateModel model = new UtilDateModel();
+//        //model.setDate(20,04,2014);
+//		Properties p = new Properties();
+//		p.put("text.today", "Today");
+//		p.put("text.month", "Month");
+//		p.put("text.year", "Year");
+//        JDatePanelImpl datePanel = new JDatePanelImpl(model, p);
+//        JDatePickerImpl datePicker = new JDatePickerImpl(datePanel, new DateLabelFormatter());
+//        
+//        jpanel.add(datePicker);
+		
+		dateField = new JTextField("yyyy-MM-dd");
 		dateField.setBounds(120, 70, 200, 20);
 		jpanel.add(dateField);
 		
@@ -123,34 +134,34 @@ public class NewOrder implements ActionListener{
 	    jpanel.add(cb);
 	    cb.addActionListener(new ActionListener() {
 
-                @Override
-                public void actionPerformed(ActionEvent e) {
-                        String s = (String) cb.getSelectedItem();
-                    System.out.println("selected time is :"+ s);
-                    switch(s){
-                        case "8.00 to 9.00":
-                            selectedTime = 1;
-                            break;
-                        case "9.00 to 10.00":
-                            selectedTime = 2;
-                            break;
-                        case "10.00 to 11.00":
-                            selectedTime = 3;
-                            break;
-                        case "11.00 to 12.00":
-                            selectedTime = 4;
-                            break;
-                        case "1.00 to 2.00":
-                            selectedTime = 5;
-                            break;
-                        case "2.00 to 3.00":
-                            selectedTime = 6;
-                            break;
-                        default:
-                            selectedTime = 0;
-                    }
-
-                }
+			@Override
+			public void actionPerformed(ActionEvent e) {
+				String s = (String) cb.getSelectedItem();
+				System.out.println("selected time is :"+ s);
+				switch(s){
+					case "8.00 to 9.00":
+						selectedTime = 1;
+						break;
+					case "9.00 to 10.00":
+						selectedTime = 2;
+						break;
+					case "10.00 to 11.00":
+						selectedTime = 3;
+						break;
+					case "11.00 to 12.00":
+						selectedTime = 4;
+						break;
+					case "1.00 to 2.00":
+						selectedTime = 5;
+						break;
+					case "2.00 to 3.00":
+						selectedTime = 6;
+						break;
+					default:
+						selectedTime = 0;
+				}
+				
+			}
 			
 	    	
 	    });
@@ -160,12 +171,12 @@ public class NewOrder implements ActionListener{
 	    submit.setBounds(120, 190, 200, 20);
 		jpanel.add(submit);
 		submit.addMouseListener(new MouseAdapter() {
-                    public void mouseClicked(MouseEvent e) {
-                        onClickSubmit();
-                    }
+			public void mouseClicked(MouseEvent e) {
+				onClickSubmit();
+			}
 
 		});
-		jframe.setLocationRelativeTo(null);
+		
 		jframe.setVisible(true);
 		
 	}
@@ -277,3 +288,4 @@ public class NewOrder implements ActionListener{
 
 
 }
+
